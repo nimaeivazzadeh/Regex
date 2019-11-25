@@ -66,22 +66,64 @@ x = 'Sport shoe $998.99 hat_1980 $100.99 Skins_A200 $1099 Skins $566.90'
 
 #-------------------------> group(0) refers to entire match
 
-def group_by_number():
-
-    pattern = r"(\d{4})(\d{2})(\d{2})(\d{2})?"
-    text = "Timestamp=20160502"
-
-    print('pattern {0}'.format(pattern))
-    print('Text {0}'.format(text))
-    match_iter = re.finditer(pattern, text)
-
-    for match in match_iter:
-        print('Match. Text: {0} Index: {1} Length: {2}'.format(match.group(0), match.start(), len(match.group(0))))
-
-        for i, value in enumerate(match.groups()):
-            print(' Group: {0}, value: {1}'.format(i+1, value))
-
-
-group_by_number()
+# def group_by_number():
+#
+#     pattern = r"(\d{4})(\d{2})(\d{2})(\d{2})?"
+#     text = "Timestamp=20160502"
+#
+#     print('pattern {0}'.format(pattern))
+#     print('Text {0}'.format(text))
+#     match_iter = re.finditer(pattern, text)
+#
+#     for match in match_iter:
+#         print('Match. Text: {0} Index: {1} Length: {2}'.format(match.group(0), match.start(), len(match.group(0))))
+#
+#         for i, value in enumerate(match.groups()):
+#             print(' Group: {0}, value: {1}'.format(i+1, value))
+#
+#
+# group_by_number()
 
 # -------------------------
+
+# re.sub # ------> replace a text that matches find pattern.
+
+# def find_replace():
+#
+#     pattern = r"(?P<value>\d+(,\d{3})*(\.\d{2})?)\s+dollar(s)?"
+#
+#     replacement_pattern = r'**USD \g<value>**'
+#
+#     text = \
+#     '''Widget Unit cost: 12,000.56 dollars
+#     Taxes: 234.00 dollars
+#     Total: 12,234.56 dollars'''
+#
+#     print('Pattern: {0}'.format(pattern))
+#     print('----Text:\n{0}'.format(text))
+#
+#     new_text = re.sub(pattern, replacement_pattern, text)
+#     print('---New Text:\n{0}'.format(new_text))
+#
+# find_replace()
+# -------------------------
+
+# re.split # ------> split text based on pattern.
+
+# def split():
+#     pattern = r"\d+\.\s*"
+#     text = 'Here is the list...1.soccer 2.tennis 3.basketball 4.\t\football'
+#
+#     print('Pattern: {0}'.format(pattern))
+#     print('Text Before: {0}'.format(text))
+#
+#     split_text = re.split(pattern, text)
+#     print('text after:')
+#     for s in split_text:
+#         print('  {0}'.format(s))
+#
+#
+# split()
+
+# -------------------------
+
